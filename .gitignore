@@ -1,0 +1,6 @@
+*.pyc
+*.pyo
+*.pickle
+
+.idea
+venv

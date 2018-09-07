@@ -1,0 +1,87 @@
+ScreenManager:
+    Screen:
+        id: main_menu
+        name: 'main_menu'
+        BoxLayout:
+            orientation: 'vertical'
+            BoxLayout:
+                Label:
+                    text: 'Escape'
+                    bold: True
+                    font_size: '50sp'
+                Label:
+                    text: 'For Android'
+                    font_size: '20sp'
+            Button:
+                text: 'New Game'
+                on_press:
+                    app.new_game()
+            Button:
+                text: 'Load Game'
+            Button:
+                text: 'Highscore'
+            Button:
+                text: 'Instructions'
+                on_press:
+                    root.current = 'instructions'
+            Button:
+                text: 'Settings'
+    Screen:
+        id: game
+        name: 'game'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                id: grid
+                text: app.grid_text
+            BoxLayout:
+                orientation: 'vertical'
+                BoxLayout:
+                    BoxLayout:
+                        orientation: 'vertical'
+                        Label:
+                            text: 'Score: ' + str(app.score)
+                        Label:
+                            text: 'Lives: ' + str(app.life_count)
+                    Button:
+                        text: 'Up'
+                    Button:
+                        text: 'Pause'
+                BoxLayout:
+                    Button:
+                        text: 'Left'
+                    Button:
+                        text: 'Down'
+                    Button:
+                        text: 'Right'
+
+    Screen:
+        id: highscore
+        name: 'highscore'
+        Label:
+            text: 'Not Implemented Yet!!!'
+    Screen:
+        id: instructions
+        name: 'instructions'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Instructions'
+                bold: True
+                font_size: '50sp'
+            Label:
+                text: 'Get your person ( i ) to the exit ( } ) without getting caught by the guards ( # ). ( * ) will give you +1 life.'
+            Button:
+                text: 'Return To Menu'
+                on_press:
+                    root.current = 'main_menu'
+    Screen:
+        id: settings
+        name: 'settings'
+        Label:
+            text: 'Not Implemented Yet!!!'
+    Screen:
+        id: pause_menu
+        name: 'pause_menu'
+        Label:
+            text: 'Not Implemented Yet!!!'
